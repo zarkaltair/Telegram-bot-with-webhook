@@ -1,8 +1,8 @@
+from bs4 import BeautifulSoup
 import requests
 import re
 import pyowm
 import datetime
-from bs4 import BeautifulSoup
 
 
 def get_html( url ):
@@ -75,7 +75,7 @@ def get_price( crypto ):
 		town_O      = 'Омск'
 		town_P      = 'Петухово'
 		town_S      = 'Шерегеш'
-		owm         = pyowm.OWM                 ( '70732ac514bf006244ac74c5f31de5aa', language='ru' )
+		owm         = pyowm.OWM                 ('70732ac514bf006244ac74c5f31de5aa', language='en')
 		obs_M       = owm.weather_at_place      ( town_M )
 		obs_E       = owm.weather_at_place      ( town_E )
 		obs_O       = owm.weather_at_place      ( town_O )
@@ -86,49 +86,58 @@ def get_price( crypto ):
 		w_O         = obs_O.get_weather         ()
 		w_P         = obs_P.get_weather         ()
 		w_S         = obs_S.get_weather         ()
-		temp_M      = w_M.get_temperature       ( 'celsius' ) ['temp']
-		temp_E      = w_E.get_temperature       ( 'celsius' ) ['temp']
-		temp_O      = w_O.get_temperature       ( 'celsius' ) ['temp']
-		temp_P      = w_P.get_temperature       ( 'celsius' ) ['temp']
-		temp_S      = w_S.get_temperature       ( 'celsius' ) ['temp']
+		temp_M      = w_M.get_temperature       ('celsius') ['temp']
+		temp_M = round(temp_M)
+		temp_E      = w_E.get_temperature       ('celsius') ['temp']
+		temp_E = round(temp_E)
+		temp_O      = w_O.get_temperature       ('celsius') ['temp']
+		temp_O = round(temp_O)
+		temp_P      = w_P.get_temperature       ('celsius') ['temp']
+		temp_P = round(temp_P)
+		temp_S      = w_S.get_temperature       ('celsius') ['temp']
+		temp_S = round(temp_S)
 		wind_M      = w_M.get_wind              () ['speed']
+		wind_M = round(wind_M)
 		wind_E      = w_E.get_wind              () ['speed']
+		wind_E = round(wind_E)
 		wind_O      = w_O.get_wind              () ['speed']
+		wind_O = round(wind_O)
 		wind_P      = w_P.get_wind              () ['speed']
+		wind_P = round(wind_P)
 		wind_S      = w_S.get_wind              () ['speed']
+		wind_S = round(wind_S)
 		status_M    = w_M.get_detailed_status   ()
 		status_E    = w_E.get_detailed_status   ()
 		status_O    = w_O.get_detailed_status   ()
 		status_P    = w_P.get_detailed_status   ()
 		status_S    = w_S.get_detailed_status   ()
-		return 'Москва {0} °C, {1}, ветер {2} м/с.\nЕкатеринбург {3} °C, {4}, ветер {5} м/с.\nОмск {6} °C, {7}, ветер {8} м/с.\nПетухово {9} °C, {10}, ветер {11} м/с.\nШерегеш {12} °C, {13}, ветер {14} м/с.'.format( temp_M, status_M, wind_M, temp_E, status_E, wind_E, temp_O, status_O, wind_O, temp_P, status_P, wind_P, temp_S, status_S, wind_S )
-#		return 'Погода в Москве {0} °C, {1}, скорость ветра {2} м/с.\nПогода в Екатеринбурге {3} °C, {4}, скорость ветра {5} м/с.\nПогода в Омске {6} °C, {7}, скорость ветра {8} м/с.\nПогода в Петухово {9} °C, {10}, скорость ветра {11} м/с.\nПогода в Шерегеше {12} °C, {13}, скорость ветра {14} м/с.'.format( temp_M, status_M, wind_M, temp_E, status_E, wind_E, temp_O, status_O, wind_O, temp_P, status_P, wind_P, temp_S, status_S, wind_S )
+		return 'Москва:\nt: {0}, w: {2:2} м/с, {1}.\nЕкатеринбург:\nt: {3}, w: {5} м/с, {4}.\nОмск:\nt: {6}, w: {8} м/с, {7}.\nПетухово:\nt: {9}, w: {11} м/с, {10}.\nШерегеш:\nt: {12}, w: {14:2} м/с, {13}.'.format( str(temp_M) + '°C', status_M, wind_M, str(temp_E) + '°C', status_E, wind_E, str(temp_O) + '°C', status_O, wind_O, str(temp_P) + '°C', status_P, wind_P, str(temp_S) + '°C', status_S, wind_S )
 
 	elif crypto == 'test': 
 		return 'This is the test message.'
 
 	elif crypto == 'new_year':
-		countdown = lambda : datetime.datetime(2019,1,1,00,00) - datetime.datetime.now()
-		return 'До нового года осталось:\n' + str(countdown())
+		countdown = lambda : datetime.datetime(2019,1,1,00,00) - datetime.datetime.now().replace(microsecond=0)
+		return '```До нового года осталось:\n' + str(countdown()) + '```'
 
 	else: 
-		url        = 'https://api.coinmarketcap.com/v1/ticker/{}'.format( crypto ) 
-		result     = requests.get( url ).json() 
-		name       = result[0] ['name'] 
-		symbol     = result[0] ['symbol'] 
-		price_btc  = result[0] ['price_btc'] 
-		price_usd  = float( result[0] ['price_usd'] ) 
-		price      = round( price_usd, 2 ) 
-		market_cap = int( float( result[0] ['market_cap_usd'] ) ) 
+		url        = 'https://api.coinmarketcap.com/v1/ticker/{}'.format( crypto )
+		result     = requests.get( url ).json()
+		name       = result[0] ['name']
+		symbol     = result[0] ['symbol']
+		price_btc  = result[0] ['price_btc']
+		price_usd  = float( result[0] ['price_usd'] )
+		price      = round( price_usd, 2 )
+		market_cap = int( float( result[0] ['market_cap_usd'] ) )
 		market     = '{:,}'.format( market_cap ) 
-		change_1h  = result[0] ['percent_change_1h'] 
-		change_24h = result[0] ['percent_change_24h'] 
-		change_7d  = result[0] ['percent_change_7d'] 
+		change_1h  = result[0] ['percent_change_1h']
+		change_24h = result[0] ['percent_change_24h']
+		change_7d  = result[0] ['percent_change_7d']
 		message    = '{0:20}{1}\n{2:20}#{3}\n{4:20}{5}\n{6:20}${7}\n{8:20}${9}\n{10:20}{11}%\n{12:20}{13}%\n{14:20}{15}%'.format('Coin name:', name,'Market ticker:', symbol, 'Price BTC:', price_btc, 'Price USD:', price, 'Market cap:', market, 'Change 1h:', change_1h, 'Change 24h:', change_24h, 'Change 7d:', change_7d )
 		return message 
 
 def main():
-	print( get_price( parse_text( '/new_year' ) ) )
+	print(get_price(parse_text('/weather')))
 
 if __name__ == '__main__':
 	main()

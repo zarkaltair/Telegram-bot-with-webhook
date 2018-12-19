@@ -1,8 +1,10 @@
-import datetime
+from datetime import datetime as dt
  
 
-countdown = lambda : datetime.datetime(2019, 1, 1, 00, 00) - datetime.datetime.now()
+countdown = lambda : dt(2019, 1, 1) - dt.now().replace(microsecond=0)
 
+# print(dt.now())
+# print(dt.isoformat(sep='T'))
 print(countdown())
 
 
