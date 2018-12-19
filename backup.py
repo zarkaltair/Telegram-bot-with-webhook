@@ -9,7 +9,7 @@ import datetime
 
 
 app = Flask(__name__)
-URL = 'https://api.telegram.org/bot334278198:AAHAHmqSO8k6y7irOS64AkW4PNTMvbB6kH8/'
+URL = 'https://api.telegram.org/bot<api-key>/'
 
 def get_html( urll ):
     respons = requests.get( urll )
