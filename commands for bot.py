@@ -1,4 +1,9 @@
+weather - check weather
+rates - check currency rates
+top - check top 10 cryptocurrency
+mk - check market cap
 new_year - check time to new year
+fibo10 - first 10 members fibo series
 bitcoin - check price
 ethereum - check price
 tezos - check price
@@ -10,7 +15,4 @@ icon - check price
 ardor - check price
 pchain - check price
 fusion - check price
-mk - check market cap
-top - check top 10 cryptocurrency
 gas - check gas price
-weather - check weather
