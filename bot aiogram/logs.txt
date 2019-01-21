@@ -1,0 +1,60 @@
+api.py [ LINE: 91 ]#   DEBUG [2019-01-21 14:00:23,502]  Make request: "sendPhoto" with data: "{'chat_id': 252027450, 'disable_notification': True}" and files "{'photo': <_io.BufferedReader name='./demo-media\\pics\\kitten0.jpg'>}"
+
+
+upload_my_files.py [ LINE: 34 ]#    INFO [2019-01-21 14:00:23,513]  Started processing hedgehog.mp4
+api.py [ LINE: 91 ]#   DEBUG [2019-01-21 14:00:23,514]  Make request: "sendVideo" with data: "{'chat_id': 252027450, 'disable_notification': True}" and files "{'video': <_io.BufferedReader name='./demo-media\\videos\\hedgehog.mp4'>}"
+
+
+upload_my_files.py [ LINE: 34 ]#    INFO [2019-01-21 14:00:23,516]  Started processing cute-puppy.mp4
+api.py [ LINE: 91 ]#   DEBUG [2019-01-21 14:00:23,517]  Make request: "sendVideoNote" with data: "{'chat_id': 252027450, 'disable_notification': True}" and files "{'video_note': <_io.BufferedReader name='./demo-media\\videoNotes\\cute-puppy.mp4'>}"
+
+
+upload_my_files.py [ LINE: 34 ]#    INFO [2019-01-21 14:00:23,519]  Started processing very important text file.txt
+api.py [ LINE: 91 ]#   DEBUG [2019-01-21 14:00:23,519]  Make request: "sendDocument" with data: "{'chat_id': 252027450, 'disable_notification': True}" and files "{'document': <_io.BufferedReader name='./demo-media\\files\\very important text file.txt'>}"
+
+
+upload_my_files.py [ LINE: 34 ]#    INFO [2019-01-21 14:00:23,522]  Started processing Rick_Astley_-_Never_Gonna_Give_You_Up.ogg
+api.py [ LINE: 91 ]#   DEBUG [2019-01-21 14:00:23,522]  Make request: "sendVoice" with data: "{'chat_id': 252027450, 'disable_notification': True}" and files "{'voice': <_io.BufferedReader name='./demo-media\\ogg\\Rick_Astley_-_Never_Gonna_Give_You_Up.ogg'>}"
+
+
+api.py [ LINE: 52 ]#   DEBUG [2019-01-21 14:00:26,936]  Response for sendDocument: [200] "'{"ok":true,"result":{"message_id":276,"from":{"id":639237490,"is_bot":true,"first_name":"Zark_chat_bot","username":"Zark_chat_bot"},"chat":{"id":252027450,"first_name":"Zark","last_name":"Alt","username":"Zark_Alt","type":"private"},"date":1548061227,"document":{"file_name":"very important text file.txt","mime_type":"text/plain","file_id":"BQADAgAD3wIAAtVJMEqvW4ozbMQXhAI","file_size":41}}}'"
+upload_my_files.py [ LINE: 49 ]#    INFO [2019-01-21 14:00:26,993]  Successfully uploaded and saved to DB file very important text file.txt with id BQADAgAD3wIAAtVJMEqvW4ozbMQXhAI
+
+
+api.py [ LINE: 52 ]#   DEBUG [2019-01-21 14:00:44,088]  Response for sendVideoNote: [200] "'{"ok":true,"result":{"message_id":277,"from":{"id":639237490,"is_bot":true,"first_name":"Zark_chat_bot","username":"Zark_chat_bot"},"chat":{"id":252027450,"first_name":"Zark","last_name":"Alt","username":"Zark_Alt","type":"private"},"date":1548061244,"video_note":{"duration":6,"length":480,"thumb":{"file_id":"AAQCABM5LQgOAAQ8pXykbjeGjZBBAAIC","file_size":13480,"width":320,"height":320},"file_id":"DQADAgAD4AIAAtVJMEp6uTbz3KrD_gI","file_size":475280}}}'"
+upload_my_files.py [ LINE: 49 ]#    INFO [2019-01-21 14:00:44,277]  Successfully uploaded and saved to DB file cute-puppy.mp4 with id DQADAgAD4AIAAtVJMEp6uTbz3KrD_gI
+
+
+api.py [ LINE: 52 ]#   DEBUG [2019-01-21 14:00:46,815]  Response for sendVoice: [200] "'{"ok":true,"result":{"message_id":278,"from":{"id":639237490,"is_bot":true,"first_name":"Zark_chat_bot","username":"Zark_chat_bot"},"chat":{"id":252027450,"first_name":"Zark","last_name":"Alt","username":"Zark_Alt","type":"private"},"date":1548061247,"voice":{"duration":30,"mime_type":"audio/ogg","file_id":"AwADAgAD4QIAAtVJMEr4Bi9pw4knCQI","file_size":232010}}}'"
+upload_my_files.py [ LINE: 49 ]#    INFO [2019-01-21 14:00:46,992]  Successfully uploaded and saved to DB file Rick_Astley_-_Never_Gonna_Give_You_Up.ogg with id AwADAgAD4QIAAtVJMEr4Bi9pw4knCQI
+
+
+api.py [ LINE: 52 ]#   DEBUG [2019-01-21 14:00:48,135]  Response for sendPhoto: [200] "'{"ok":true,"result":{"message_id":279,"from":{"id":639237490,"is_bot":true,"first_name":"Zark_chat_bot","username":"Zark_chat_bot"},"chat":{"id":252027450,"first_name":"Zark","last_name":"Alt","username":"Zark_Alt","type":"private"},"date":1548061248,"photo":[{"file_id":"AgADAgAD_KoxG9VJMEqByuFKwZlSkG9lXw8ABEMNviw6tsGBWwkBAAEC","file_size":1435,"width":90,"height":81},{"file_id":"AgADAgAD_KoxG9VJMEqByuFKwZlSkG9lXw8ABB-UEUI-NgbUXAkBAAEC","file_size":14619,"width":320,"height":289},{"file_id":"AgADAgAD_KoxG9VJMEqByuFKwZlSkG9lXw8ABCdYNkU_W2ZmWgkBAAEC","file_size":37966,"width":605,"height":547}]}}'"
+upload_my_files.py [ LINE: 49 ]#    INFO [2019-01-21 14:00:48,303]  Successfully uploaded and saved to DB file kitten0.jpg with id AgADAgAD_KoxG9VJMEqByuFKwZlSkG9lXw8ABCdYNkU_W2ZmWgkBAAEC
+
+
+upload_my_files.py [ LINE: 34 ]#    INFO [2019-01-21 14:00:48,303]  Started processing kitten1.jpg
+api.py [ LINE: 91 ]#   DEBUG [2019-01-21 14:00:48,304]  Make request: "sendPhoto" with data: "{'chat_id': 252027450, 'disable_notification': True}" and files "{'photo': <_io.BufferedReader name='./demo-media\\pics\\kitten1.jpg'>}"
+api.py [ LINE: 52 ]#   DEBUG [2019-01-21 14:00:58,464]  Response for sendVideo: [200] "'{"ok":true,"result":{"message_id":280,"from":{"id":639237490,"is_bot":true,"first_name":"Zark_chat_bot","username":"Zark_chat_bot"},"chat":{"id":252027450,"first_name":"Zark","last_name":"Alt","username":"Zark_Alt","type":"private"},"date":1548061258,"video":{"duration":14,"width":640,"height":640,"mime_type":"video/mp4","thumb":{"file_id":"AAQCABPsJAgOAAS5-d2_vE5eXv5EAAIC","file_size":30980,"width":320,"height":320},"file_id":"BAADAgAD4gIAAtVJMEqg74p_y4OvdgI","file_size":1029881}}}'"
+upload_my_files.py [ LINE: 49 ]#    INFO [2019-01-21 14:00:58,522]  Successfully uploaded and saved to DB file hedgehog.mp4 with id BAADAgAD4gIAAtVJMEqg74p_y4OvdgI
+api.py [ LINE: 52 ]#   DEBUG [2019-01-21 14:01:03,876]  Response for sendPhoto: [200] "'{"ok":true,"result":{"message_id":281,"from":{"id":639237490,"is_bot":true,"first_name":"Zark_chat_bot","username":"Zark_chat_bot"},"chat":{"id":252027450,"first_name":"Zark","last_name":"Alt","username":"Zark_Alt","type":"private"},"date":1548061264,"photo":[{"file_id":"AgADAgAD_aoxG9VJMEoIiQjQLgjpcONKXw8ABNhSPJxss-qu0Q0BAAEC","file_size":1269,"width":60,"height":90},{"file_id":"AgADAgAD_aoxG9VJMEoIiQjQLgjpcONKXw8ABDYajANk81LP0A0BAAEC","file_size":18645,"width":213,"height":320},{"file_id":"AgADAgAD_aoxG9VJMEoIiQjQLgjpcONKXw8ABFl6P2nNx4zh0w0BAAEC","file_size":72029,"width":533,"height":800},{"file_id":"AgADAgAD_aoxG9VJMEoIiQjQLgjpcONKXw8ABJNPm4ayc0Zz0g0BAAEC","file_size":167205,"width":853,"height":1280},{"file_id":"AgADAgAD_aoxG9VJMEoIiQjQLgjpcONKXw8ABMOanJERB_J2zw0BAAEC","file_size":280033,"width":1200,"height":1800}]}}'"
+upload_my_files.py [ LINE: 49 ]#    INFO [2019-01-21 14:01:03,936]  Successfully uploaded and saved to DB file kitten1.jpg with id AgADAgAD_aoxG9VJMEoIiQjQLgjpcONKXw8ABMOanJERB_J2zw0BAAEC
+
+
+upload_my_files.py [ LINE: 34 ]#    INFO [2019-01-21 14:01:03,937]  Started processing kitten2.jpg
+api.py [ LINE: 91 ]#   DEBUG [2019-01-21 14:01:03,937]  Make request: "sendPhoto" with data: "{'chat_id': 252027450, 'disable_notification': True}" and files "{'photo': <_io.BufferedReader name='./demo-media\\pics\\kitten2.jpg'>}"
+api.py [ LINE: 52 ]#   DEBUG [2019-01-21 14:01:07,527]  Response for sendPhoto: [200] "'{"ok":true,"result":{"message_id":282,"from":{"id":639237490,"is_bot":true,"first_name":"Zark_chat_bot","username":"Zark_chat_bot"},"chat":{"id":252027450,"first_name":"Zark","last_name":"Alt","username":"Zark_Alt","type":"private"},"date":1548061267,"photo":[{"file_id":"AgADAgAD_qoxG9VJMEqTwmaPrmhXKmF6Xw8ABO6-QuO0y_vE-AoBAAEC","file_size":1257,"width":90,"height":60},{"file_id":"AgADAgAD_qoxG9VJMEqTwmaPrmhXKmF6Xw8ABLBdv3-vVO7n-QoBAAEC","file_size":16814,"width":320,"height":213},{"file_id":"AgADAgAD_qoxG9VJMEqTwmaPrmhXKmF6Xw8ABIq2wgu_QkBM-goBAAEC","file_size":52898,"width":748,"height":498}]}}'"
+upload_my_files.py [ LINE: 49 ]#    INFO [2019-01-21 14:01:07,585]  Successfully uploaded and saved to DB file kitten2.jpg with id AgADAgAD_qoxG9VJMEqTwmaPrmhXKmF6Xw8ABIq2wgu_QkBM-goBAAEC
+
+
+upload_my_files.py [ LINE: 34 ]#    INFO [2019-01-21 14:01:07,585]  Started processing kitten3.jpg
+api.py [ LINE: 91 ]#   DEBUG [2019-01-21 14:01:07,585]  Make request: "sendPhoto" with data: "{'chat_id': 252027450, 'disable_notification': True}" and files "{'photo': <_io.BufferedReader name='./demo-media\\pics\\kitten3.jpg'>}"
+api.py [ LINE: 52 ]#   DEBUG [2019-01-21 14:01:08,525]  Response for sendPhoto: [200] "'{"ok":true,"result":{"message_id":283,"from":{"id":639237490,"is_bot":true,"first_name":"Zark_chat_bot","username":"Zark_chat_bot"},"chat":{"id":252027450,"first_name":"Zark","last_name":"Alt","username":"Zark_Alt","type":"private"},"date":1548061268,"photo":[{"file_id":"AgADAgAD_6oxG9VJMErIQz69tr_T_YJJXw8ABJ6olHmmR6l0Gw0BAAEC","file_size":1456,"width":90,"height":60},{"file_id":"AgADAgAD_6oxG9VJMErIQz69tr_T_YJJXw8ABJdloSdtDWQkGg0BAAEC","file_size":13802,"width":300,"height":200}]}}'"
+upload_my_files.py [ LINE: 49 ]#    INFO [2019-01-21 14:01:08,691]  Successfully uploaded and saved to DB file kitten3.jpg with id AgADAgAD_6oxG9VJMErIQz69tr_T_YJJXw8ABJdloSdtDWQkGg0BAAEC
+
+
+base_events.py [ LINE:1608 ]#   ERROR [2019-01-21 14:01:08,741]  Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x045576F0>
+base_events.py [ LINE:1608 ]#   ERROR [2019-01-21 14:01:08,741]  Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x04805768>, 262132.64), (<aiohttp.client_proto.ResponseHandler object at 0x04805810>, 262135.359), (<aiohttp.client_proto.ResponseHandler object at 0x048056C0>, 262147.015), (<aiohttp.client_proto.ResponseHandler object at 0x0452AEA0>, 262157.078)]']
+connector: <aiohttp.connector.TCPConnector object at 0x04557610>
