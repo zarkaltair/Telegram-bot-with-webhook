@@ -1,6 +1,7 @@
 import json
-from time import sleep
 import requests
+
+from time import sleep
 from bs4 import BeautifulSoup
 
 

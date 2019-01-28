@@ -1,8 +1,9 @@
-from bs4 import BeautifulSoup
-import requests
 import re
 import pyowm
+import requests
 import datetime
+
+from bs4 import BeautifulSoup
 
 
 URL_FOR_RATES = 'https://openexchangerates.org/api/latest.json?app_id=3314f836fa864cb39c496105697a6d7f'
@@ -154,6 +155,18 @@ def get_price(crypto):
 	elif crypto == 'fibo10':
 		return fib(10)
 
+	elif crypto == 'image':
+		# response = requests.get('https://loremflickr.com/320/240', allow_redirects=True)
+		
+		session = requests.Session()
+		session.trust_env = False
+
+		response = session.get('https://loremflickr.com/320/240', allow_redirects=True)
+
+		bot.send_photo(chat_id=chat_id, photo='https://telegram.org/img/t_logo.png')
+
+		return response.content
+
 	elif crypto == 'rates':
 		request = requests.get(URL_FOR_RATES).json()
 		rub = round(request['rates']['RUB'], 2)
@@ -181,7 +194,7 @@ def get_price(crypto):
 		return message 
 
 def main():
-	print(get_price(parse_text('/rates')))
+	print(get_price(parse_text('/image')))
 
 if __name__ == '__main__':
 	main()

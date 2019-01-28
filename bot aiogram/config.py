@@ -10,7 +10,7 @@
 # proxies = {'http': '66.96.237.71:37882'}
 # url = 'http://httpbin.org/ip'
 
-# r = requests.get(url, proxies=proxies).json() # {'origin': '178.46.212.173'}
+# r = requests.get(url, proxies=proxies).json() # {'origin': 'x.x.x.x'}
 # print(r)
 
 
