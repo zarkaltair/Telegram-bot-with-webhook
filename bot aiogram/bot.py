@@ -1,12 +1,11 @@
 import logging
 import asyncio
-
 import aiohttp
 
 from aiogram import Bot, types
-from aiogram.dispatcher import Dispatcher
 from aiogram.types import ParseMode
 from aiogram.utils.emoji import emojize
+from aiogram.dispatcher import Dispatcher
 from aiogram.utils.executor import start_polling
 from aiogram.utils.markdown import bold, code, italic, text
 
@@ -29,10 +28,12 @@ loop = asyncio.get_event_loop()
 bot = Bot(token=API_TOKEN, loop=loop, proxy=PROXY)
 dp = Dispatcher(bot)
 
+
 async def fetch(url, proxy=None, proxy_auth=None):
     async with aiohttp.ClientSession() as session:
         async with session.get(url, proxy=proxy, proxy_auth=proxy_auth) as response:
             return await response.text()
+
 
 @dp.message_handler(commands=['start'])
 async def cmd_start(message: types.Message):
@@ -59,5 +60,10 @@ async def cmd_start(message: types.Message):
     # For example emojize('Moon face :new_moon_face:') is transformed to 'Moon face 🌚'
 
 
+@dp.message_handler()
+async def echo_message(message: types.Message):
+    await bot.send_message(message.chat.id, message.text)
+
+
 if __name__ == '__main__':
-    start_polling(dp, loop=loop, skip_updates=True)
+    start_polling(dp, loop=loop, skip_updates=False)
